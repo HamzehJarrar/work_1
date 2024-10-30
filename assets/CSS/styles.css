@@ -9,6 +9,7 @@
 body {
   background-image: url(../Img/background.svg);
   font-family: "Plus Jakarta Sans", sans-serif;
+  height: 500vh;
 }
 
 body::-webkit-scrollbar {
@@ -262,31 +263,114 @@ header {
 }
 .skills img {
   width: 100%;
+  background: #11071f;
+  box-shadow: 0px 6px 22px -3px rgba(0, 0, 0, 0.1);
 }
 /* skills end */
 
 /* Featured */
 .Featured {
+  display: flex;
+  flex-direction: column;
+}
+.Featured .project_one {
   position: relative;
-  margin-top: 120px;
-  max-width: 100%; /* Ensure it doesn't exceed the viewport */
-  overflow: hidden; /* Hide overflow */
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 180px;
 }
-.Featured img {
-  width: 100%;
-  height: auto; /* Maintain aspect ratio */
-}
-.Featured p {
+.Featured .project_one .project_photo {
+  width: 60%;
   position: absolute;
-  top: 90px;
-  left: 20px;
+  top: 50px;
+  right: -180px;
+  z-index: -1;
+  background: #2b0b3a;
   padding: 10px;
-  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.Featured .project_one .project_text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.Featured .project_one .project_text p:nth-child(1) {
+  color: #9857d3;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.32px;
+}
+.Featured .project_one .project_text p:nth-child(2) {
+  color: #ccd6f6;
+  font-family: Poppins;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.68px;
+}
+.Featured .project_one .project_text .bottom_text p {
+  width: 65%;
   color: #ccd6f6;
   font-family: Poppins;
   font-size: 18px;
   font-weight: 500;
+  background-color: #1a0b2e;
+  background-blend-mode: overlay, normal;
+  backdrop-filter: blur(40px);
+  border-radius: 14px;
+  padding: 30px;
 }
+/* Project two */
+.Featured .project_two {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 180px;
+}
+
+.Featured .project_two .project_text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.Featured .project_two .project_text p:nth-child(1) {
+  color: #9857d3;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.32px;
+}
+
+.Featured .project_two .project_text p:nth-child(2) {
+  color: #ccd6f6;
+  font-family: Poppins;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.68px;
+}
+
+.Featured .project_two .project_text .bottom_text p {
+  position: absolute;
+  top: 115px;
+  right: -180px;
+  width: 65%;
+  color: #ccd6f6;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #1a0b2e;
+  background-blend-mode: overlay, normal;
+  backdrop-filter: blur(40px);
+  border-radius: 14px;
+  padding: 30px;
+}
+
+/* Project two end */
+
+/* Featured - end */
+
 /* Styles for screens 1024px wide */
 @media (max-width: 1440px) {
   .Featured p {
@@ -303,19 +387,48 @@ header {
     font-size: 12px;
     left: 12px;
   }
+  .Featured .project_one {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Styles for 768px wide screens */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
+  .Featured .project_one {
+    margin-bottom: 300px;
+  }
+  .Featured .project_one .project_photo {
+    position: absolute;
+    top: 275px;
+    left: 100px;
+  }
+  .Featured .project_one .project_photo img {
+    width: 400px;
+  }
+  .Featured .project_one .project_text .bottom_text p {
+    width: 100%;
+  }
   .Featured p {
-    top: 80px;
-    font-size: 15px;
-    left: 10px;
+    top: 45px;
+    font-size: 9px;
+    left: 8px;
   }
 }
 
 /* Styles for 425px wide screens (mobile) */
 @media (max-width: 450px) {
+  .Featured .project_one .project_photo {
+    position: absolute;
+    top: 360px;
+    left: 0px;
+  }
+  .Featured .project_one .project_photo img {
+    width: 400px;
+  }
+  .Featured .project_one .project_text .bottom_text p {
+    width: 100%;
+  }
   .Featured p {
     top: 45px;
     font-size: 9px;
@@ -323,13 +436,23 @@ header {
   }
 }
 @media (max-width: 400px) {
-  .Featured p {
-    top: 35px;
-    font-size: 9px;
+  .Featured .project_one .project_photo {
+    position: absolute;
+    top: 360px;
     left: 0px;
   }
+  .Featured .project_one .project_photo img {
+    width: 400px;
+  }
+  .Featured .project_one .project_text .bottom_text p {
+    width: 500px;
+  }
+  .Featured p {
+    top: 45px;
+    font-size: 9px;
+    left: 8px;
+  }
 }
-
 /* Featured End */
 
 /* Responsive Adjustments */
